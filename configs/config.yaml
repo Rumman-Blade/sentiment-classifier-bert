@@ -1,0 +1,22 @@
+# Model
+model_name: "bert-base-uncased"  # 110M params, lowercase text, good balance of speed vs quality
+
+# Data
+dataset_name: "imdb"             # HuggingFace dataset, loads automatically
+max_length: 128                  # max tokens per review (BERT max is 512, we use 128 for speed)
+train_samples: 2000              # subset of full 25k training set (for local dev)
+test_samples: 500                # subset of full 25k test set
+
+# Training
+output_dir: "outputs/"
+num_epochs: 3
+batch_size: 8
+learning_rate: 0.00002           # 2e-5, standard for BERT fine-tuning
+warmup_steps: 100
+weight_decay: 0.01
+
+# Eval
+metric: "accuracy"
+logging_steps: 50
+eval_steps: 100
+save_steps: 100
