@@ -16,3 +16,13 @@ Built as a deep-dive learning project to understand transformer-based NLP pipeli
 ---
 
 ## Project Structure
+sentiment-classifier-bert/
+├── configs/
+│   └── config.yaml       # all hyperparameters in one place
+├── data/                 # placeholder (dataset loads via HuggingFace)
+├── src/
+│   ├── train.py          # fine-tuning pipeline with HuggingFace Trainer
+│   └── eval.py           # inference + metrics on custom sentences
+├── outputs/              # saved model weights (gitignored)
+├── requirements.txt
+└── README.md
